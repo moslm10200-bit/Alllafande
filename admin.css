@@ -1,27 +1,54 @@
-:root{--teal:#0b2e3a;--teal2:#14606b;--gold:#d9b25f;--gold-d:#8a6a2c;--paper:#fbfaf7;--line:#e7e2d8}
+:root{--teal:#0b2e3a;--teal2:#14606b;--gold:#d9b25f;--bg:#f5f1ea;--line:#e4e1da}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:"Tajawal",system-ui,sans-serif;background:var(--paper);color:#141414;line-height:1.6;padding-bottom:40px}
-button,input,textarea{font-family:inherit;font-size:15px}
-button{cursor:pointer;border:0}
-.bar{background:var(--teal);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
-.bar h1{font-family:"AfandiDiwani","Aref Ruqaa",serif;font-size:22px;color:var(--gold)}
-.bar a,.bar button{color:#fff;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:20px;font-size:14px;text-decoration:none;margin-right:6px}
-.wrap{max-width:640px;margin:0 auto;padding:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
-.card h2{font-size:18px;margin-bottom:10px}
-label{display:block;font-weight:700;font-size:13.5px;margin:10px 0 4px}
-input,textarea{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
-textarea{min-height:70px;resize:vertical}
-.btn{background:#111;color:var(--gold);padding:11px 18px;border-radius:10px;font-weight:700;margin-top:12px}
-.btn.alt{background:#f1efe9;color:#222}.btn.red{background:#b3261e;color:#fff}
-.btn.sm{padding:6px 12px;margin:0 0 0 6px;font-size:13px}
-.tabs{display:flex;gap:6px;margin-bottom:14px}
-.tabs button{flex:1;padding:10px;border-radius:10px;background:#fff;border:1.5px solid var(--line);font-weight:700}
-.tabs button.on{background:var(--teal);color:var(--gold);border-color:var(--teal)}
-.row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
-.row img{width:50px;height:50px;border-radius:10px;object-fit:cover;background:#eee}
-.row .t{flex:1;min-width:0}.row .t small{color:var(--gold-d);font-weight:700;display:block}
-.msg{padding:9px 12px;border-radius:10px;margin-top:10px;font-size:14px;display:none}
-.msg.ok{display:block;background:#e6f4ea;color:#1b5e20}.msg.err{display:block;background:#fdecea;color:#b3261e}
-.ord{border-bottom:1px solid var(--line);padding:10px 0;font-size:14.5px}.ord b{color:var(--teal2)}
+body{font-family:"Tajawal",system-ui,sans-serif;background:var(--bg);color:#1a1a1a;line-height:1.6}
+button,input,textarea{font-family:inherit;font-size:16px}
+button{cursor:pointer;border:0;color:inherit}
+a{color:inherit;text-decoration:none}
 [hidden]{display:none!important}
+label{display:block;font-weight:700;font-size:15px;margin:14px 0 6px}
+input,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;outline:0}
+input:focus,textarea:focus{border-color:var(--teal2);box-shadow:0 0 0 3px rgba(20,96,107,.18)}
+textarea{min-height:80px;resize:vertical}
+.msg{display:none;padding:10px 12px;border-radius:12px;margin-top:12px;font-size:14px}
+.msg.ok{display:block;background:#e6f4ea;color:#1b5e20}.msg.err{display:block;background:#fdecea;color:#b3261e}
+
+/* دخول */
+.login{min-height:100svh;display:grid;place-items:center;padding:20px}
+.login-card{width:100%;max-width:440px;background:#fff;border-radius:30px;padding:30px 28px 28px;box-shadow:0 16px 50px rgba(0,0,0,.08)}
+.login-card .back{color:#777;font-size:15px}
+.login-card h1{font-size:32px;font-weight:800;margin:14px 0 6px}
+.btn-main{width:100%;padding:15px;border-radius:18px;background:var(--teal2);color:#fff;font-weight:700;font-size:18px;margin-top:24px}
+.btn-main:active{transform:scale(.99)}
+
+/* اللوحة */
+.panel{max-width:640px;margin:0 auto;padding:18px 16px 40px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.head h1{font-size:28px;font-weight:800;line-height:1.2}
+.head p{color:#777;font-size:15px;direction:ltr;text-align:right;word-break:break-all}
+.head-btns{display:flex;gap:8px}
+.btn-soft{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:14px 20px;font-weight:700;color:var(--teal2)}
+.btn-soft.wide{width:100%;margin-top:12px}
+.tabs{display:flex;background:#e9e8ee;border-radius:20px;padding:5px;margin-bottom:18px}
+.tabs button{flex:1;padding:12px 6px;border-radius:16px;background:none;font-weight:700;color:#777}
+.tabs button.on{background:#fff;color:#111;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.bar{display:flex;margin-bottom:14px}
+.btn-add{background:var(--teal);color:var(--gold);font-weight:800;padding:14px 24px;border-radius:18px;font-size:17px}
+.item{display:flex;align-items:center;gap:12px;background:#fff;border-radius:22px;padding:14px;margin-bottom:12px}
+.thumb{flex:0 0 62px;height:62px;border-radius:16px;background:#eef3f3 center/cover no-repeat;display:grid;place-items:center}
+.thumb i{width:26px;height:34px;border-radius:8px 8px 12px 12px;background:var(--gold)}
+.item .t{flex:1;min-width:0}
+.item .t b{display:block;font-size:17px;font-weight:800}
+.item .t small{color:#888;font-size:14px}
+.item button{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:11px 14px;font-weight:700;color:var(--teal2)}
+.item button.del{color:#e53935}
+.empty{text-align:center;color:#888;padding:26px 0}
+.box,.ord{background:#fff;border-radius:22px;padding:16px}
+.ord{margin-bottom:12px;font-size:15px}.ord b{color:var(--teal2)}
+.ord button{margin-top:8px;background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:6px 14px;color:#e53935;font-weight:700}
+
+/* نافذة المنتج */
+.overlay{position:fixed;inset:0;z-index:50;background:rgba(5,20,26,.55);display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:#fff;width:100%;max-width:560px;max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom))}
+.sheet h2{font-size:22px;font-weight:800}
+.sheet-btns{display:flex;gap:10px;margin-top:18px}
+.sheet-btns .btn-main{margin:0;flex:2}.sheet-btns .btn-soft{flex:1;border-radius:18px}
