@@ -1,0 +1,27 @@
+:root{--teal:#0b2e3a;--teal2:#14606b;--gold:#d9b25f;--gold-d:#8a6a2c;--paper:#fbfaf7;--line:#e7e2d8}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:"Tajawal",system-ui,sans-serif;background:var(--paper);color:#141414;line-height:1.6;padding-bottom:40px}
+button,input,textarea{font-family:inherit;font-size:15px}
+button{cursor:pointer;border:0}
+.bar{background:var(--teal);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.bar h1{font-family:"AfandiDiwani","Aref Ruqaa",serif;font-size:22px;color:var(--gold)}
+.bar a,.bar button{color:#fff;background:rgba(255,255,255,.14);padding:6px 14px;border-radius:20px;font-size:14px;text-decoration:none;margin-right:6px}
+.wrap{max-width:640px;margin:0 auto;padding:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}
+.card h2{font-size:18px;margin-bottom:10px}
+label{display:block;font-weight:700;font-size:13.5px;margin:10px 0 4px}
+input,textarea{width:100%;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+textarea{min-height:70px;resize:vertical}
+.btn{background:#111;color:var(--gold);padding:11px 18px;border-radius:10px;font-weight:700;margin-top:12px}
+.btn.alt{background:#f1efe9;color:#222}.btn.red{background:#b3261e;color:#fff}
+.btn.sm{padding:6px 12px;margin:0 0 0 6px;font-size:13px}
+.tabs{display:flex;gap:6px;margin-bottom:14px}
+.tabs button{flex:1;padding:10px;border-radius:10px;background:#fff;border:1.5px solid var(--line);font-weight:700}
+.tabs button.on{background:var(--teal);color:var(--gold);border-color:var(--teal)}
+.row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row img{width:50px;height:50px;border-radius:10px;object-fit:cover;background:#eee}
+.row .t{flex:1;min-width:0}.row .t small{color:var(--gold-d);font-weight:700;display:block}
+.msg{padding:9px 12px;border-radius:10px;margin-top:10px;font-size:14px;display:none}
+.msg.ok{display:block;background:#e6f4ea;color:#1b5e20}.msg.err{display:block;background:#fdecea;color:#b3261e}
+.ord{border-bottom:1px solid var(--line);padding:10px 0;font-size:14.5px}.ord b{color:var(--teal2)}
+[hidden]{display:none!important}

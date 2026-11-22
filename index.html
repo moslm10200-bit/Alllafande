@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>شاورما الأفندي | شاورما ومأكولات شهية</title>
+<meta name="description" content="شاورما الأفندي — شاورما، وجبات، برغر، بيتزا ومقبلات بطعم أصيل. اطلب الآن عبر واتساب.">
+<meta name="theme-color" content="#0b2e3a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ========== الشريط العلوي ========== -->
+<header class="topbar" id="topbar">
+  <div class="tb-side">
+    <a class="icon-btn" id="lnkWhats" target="_blank" rel="noopener" aria-label="واتساب">
+      <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.2 15l-.3-.2-3.1.9.9-3-.2-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.2 3.9c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3l-1.9-.9c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.700-1.5-2-.2-.3 0-.4.1-.6l.4-.5.3-.5v-.5l-.9-2.200c-.2-.5-.4-.5-.6-.5Z"/></svg>
+    </a>
+    <a class="icon-btn" id="lnkAdmin" href="admin.html" aria-label="لوحة الإدارة">
+      <svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 4.8 3.2 8.7 8 10 4.8-1.300 8-5.200 8-10V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.500" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7.800 16.500c.9-1.700 2.400-2.500 4.200-2.500s3.300.8 4.200 2.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </a>
+  </div>
+  <a class="brand-title" href="#top" aria-label="شاورما الأفندي">شاورما الأفندي</a>
+  <div class="tb-side">
+    <button class="icon-btn" id="btnCart" aria-label="السلة">
+      <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <span class="badge" id="cartCount" hidden>0</span>
+    </button>
+    <button class="icon-btn" id="btnQR" aria-label="رمز QR للموقع">
+      <svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></g><g fill="currentColor"><rect x="5.3" y="5.3" width="2.400" height="2.400"/><rect x="16.300" y="5.300" width="2.400" height="2.400"/><rect x="5.300" y="16.300" width="2.400" height="2.400"/><rect x="14" y="14" width="3" height="3"/><rect x="18" y="14" width="3" height="3"/><rect x="14" y="18" width="3" height="3"/><rect x="18" y="18" width="3" height="3"/></g></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ========== الواجهة (فيديو أو صورة) ========== -->
+<section class="hero" id="top">
+  <div class="hero-media" id="heroMedia"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-inner">
+    <div class="hero-brand">شاورما الأفندي</div>
+    <h1>طعم أصيل<br>يستحق التجربة</h1>
+    <p>شاورما، وجبات، برغر، بيتزا ومقبلات تُحضَّر طازجة بمكوّنات مختارة وبنكهة تعيدك دائماً إلينا. اطلب الآن ونوصلها لك ساخنة.</p>
+    <a href="#collection" class="btn-outline">تصفّح القائمة</a>
+  </div>
+  <div class="hero-fade"></div>
+</section>
+
+<!-- ========== المنتجات ========== -->
+<main class="collection" id="collection">
+  <div class="sec-head">
+    <span class="sec-kicker">قائمتنا</span>
+    <h2>قائمة الأفندي</h2>
+    <div class="orn"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="footer">
+  <div class="logo dark"><img id="footLogo" alt="السكب للتطوير البرمجي"></div>
+  <p id="devName">السكب للتطوير البرمجي</p>
+  <div class="foot-social">
+    <a id="fInsta" target="_blank" rel="noopener">انستقرام</a>
+    <a id="fTiktok" target="_blank" rel="noopener">تيك توك</a>
+    <a id="fWhats" target="_blank" rel="noopener">واتساب</a>
+  </div>
+  <small>© <span id="yr"></span> السكب للتطوير البرمجي — جميع الحقوق محفوظة</small>
+</footer>
+
+<!-- ========== نافذة QR ========== -->
+<div class="overlay" id="qrModal" hidden>
+  <div class="modal qr-modal" role="dialog" aria-label="رمز QR">
+    <button class="close" data-close aria-label="إغلاق">✕</button>
+    <h3>امسح الرمز للطلب عبر واتساب</h3>
+    <div class="qr-box"><canvas id="qrCanvas"></canvas></div>
+    <div class="support">
+      <span>للطلب والتواصل :</span>
+      <a id="supportNum" dir="ltr"></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== نافذة التفاصيل ========== -->
+<div class="overlay" id="detailModal" hidden>
+  <div class="modal" role="dialog" aria-label="تفاصيل الصنف">
+    <button class="close" data-close aria-label="إغلاق">✕</button>
+    <img id="dImg" alt="">
+    <h3 id="dName"></h3>
+    <div class="by" id="dBy"></div>
+    <p id="dDesc"></p>
+    <ul class="notes" id="dNotes"></ul>
+    <div class="d-price" id="dPrice"></div>
+    <button class="btn-dark wide" id="dAdd">أضف للسلة</button>
+  </div>
+</div>
+
+<!-- ========== السلة ========== -->
+<div class="overlay" id="cartModal" hidden>
+  <div class="modal cart-modal" role="dialog" aria-label="السلة">
+    <button class="close" data-close aria-label="إغلاق">✕</button>
+    <h3>سلة المشتريات</h3>
+    <div id="cartList"></div>
+    <div class="cart-total"><span>المجموع</span><b id="cartTotal"></b></div>
+    <button class="btn-dark wide" id="btnOrder">إتمام الطلب عبر واتساب</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="products.js"></script>
+<script src="firebase-config.js"></script>
+<script src="/api/config"></script>
+<script src="firebase-adapter.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
