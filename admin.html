@@ -65,7 +65,12 @@
     <label>الاسم</label><input id="pName">
     <label>التصنيف (ساندويش، وجبات، برغر...)</label><input id="pBy">
     <label>السعر</label><input id="pPrice" type="number" step="0.01" inputmode="decimal">
-    <label>رابط الصورة (اختياري)</label><input id="pImg" dir="ltr" placeholder="https://...">
+    <label>صورة المنتج</label>
+    <div class="up">
+      <div class="up-prev" id="upPrev"><span>بدون صورة</span></div>
+      <div class="up-btns"><label class="btn-soft" for="pFile">اختر صورة</label><button type="button" class="btn-soft" id="btnNoImg">إزالة</button></div>
+      <input id="pFile" type="file" accept="image/*" hidden>
+    </div>
     <label>الوصف</label><textarea id="pDesc"></textarea>
     <label>المكوّنات (افصل بفاصلة)</label><input id="pNotes" placeholder="دجاج، ثوم، مخلل">
     <div class="msg" id="fMsg"></div>

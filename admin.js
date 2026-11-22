@@ -10,7 +10,7 @@
   if (!cfg.apiKey) { say("loginMsg", "إعدادات Firebase ناقصة", false); return; }
   firebase.initializeApp(cfg);
   var auth = firebase.auth(), db = firebase.firestore();
-  var products = [], editing = null;
+  var products = [], editing = null, imgData = "";
 
   /* ---------- الدخول ---------- */
   $("btnIn").onclick = function () {
@@ -44,11 +44,39 @@
       }).join("") : '<p class="empty">لا منتجات في Firebase بعد — الموقع يعرض القائمة الافتراضية.</p>';
     }).catch(function (e) { say("pMsg", "تعذر التحميل: " + e.code, false); });
   }
+  /* رفع الصورة: تُصغَّر داخل المتصفح وتُحفظ مع المنتج (بدون رابط وبدون Storage) */
+  function showPrev() {
+    var pv = $("upPrev"); pv.style.backgroundImage = imgData ? "url('" + imgData + "')" : "none"; pv.classList.toggle("has", !!imgData);
+  }
+  function shrink(file, cb) {
+    var rd = new FileReader();
+    rd.onload = function () {
+      var im = new Image();
+      im.onload = function () {
+        var max = 700, r = Math.min(1, max / Math.max(im.width, im.height)), cv = document.createElement("canvas");
+        cv.width = Math.round(im.width * r); cv.height = Math.round(im.height * r);
+        cv.getContext("2d").drawImage(im, 0, 0, cv.width, cv.height);
+        var q = 0.8, out = cv.toDataURL("image/jpeg", q);
+        while (out.length > 300000 && q > 0.3) { q -= 0.1; out = cv.toDataURL("image/jpeg", q); }
+        cb(out);
+      };
+      im.onerror = function () { say("fMsg", "تعذر قراءة الصورة", false); };
+      im.src = rd.result;
+    };
+    rd.readAsDataURL(file);
+  }
+  $("pFile").onchange = function () {
+    var f = this.files[0]; if (!f) return;
+    shrink(f, function (d) { imgData = d; showPrev(); });
+    this.value = "";
+  };
+  $("btnNoImg").onclick = function () { imgData = ""; showPrev(); };
+
   function openForm(p) {
     editing = p ? p.id : null;
     $("formTitle").textContent = p ? "تعديل منتج" : "منتج جديد";
     $("pName").value = p ? p.name : ""; $("pBy").value = p ? p.by || "" : ""; $("pPrice").value = p ? p.price : "";
-    $("pImg").value = p ? p.img || "" : ""; $("pDesc").value = p ? p.desc || "" : ""; $("pNotes").value = p ? (p.notes || []).join("، ") : "";
+    imgData = p ? p.img || "" : ""; showPrev(); $("pDesc").value = p ? p.desc || "" : ""; $("pNotes").value = p ? (p.notes || []).join("، ") : "";
     $("fMsg").className = "msg"; $("fModal").hidden = false;
   }
   $("btnNew").onclick = function () { openForm(null); };
@@ -63,7 +91,7 @@
     var name = $("pName").value.trim(), price = parseFloat($("pPrice").value);
     if (!name || isNaN(price)) return say("fMsg", "اكتب الاسم والسعر", false);
     var id = editing || products.reduce(function (m, p) { return Math.max(m, p.id); }, 0) + 1;
-    var doc = { id: id, name: name, by: $("pBy").value.trim(), price: price, img: $("pImg").value.trim(), desc: $("pDesc").value.trim(),
+    var doc = { id: id, name: name, by: $("pBy").value.trim(), price: price, img: imgData, desc: $("pDesc").value.trim(),
       notes: $("pNotes").value.split(/[,،]/).map(function (x) { return x.trim(); }).filter(Boolean) };
     db.collection("products").doc(String(id)).set(doc).then(function () { $("fModal").hidden = true; loadProducts(); })
       .catch(function (e) { say("fMsg", "فشل الحفظ: " + e.code, false); });

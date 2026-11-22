@@ -52,3 +52,10 @@ textarea{min-height:80px;resize:vertical}
 .sheet h2{font-size:22px;font-weight:800}
 .sheet-btns{display:flex;gap:10px;margin-top:18px}
 .sheet-btns .btn-main{margin:0;flex:2}.sheet-btns .btn-soft{flex:1;border-radius:18px}
+
+/* رفع الصورة */
+.up{display:flex;align-items:center;gap:14px}
+.up-prev{flex:0 0 96px;height:96px;border-radius:18px;background:#eef3f3 center/cover no-repeat;display:grid;place-items:center;color:#888;font-size:13px}
+.up-prev.has span{display:none}
+.up-btns{display:flex;flex-direction:column;gap:8px;flex:1}
+.up-btns .btn-soft,.up-btns label{margin:0;padding:11px 14px;text-align:center;cursor:pointer;font-size:15px;display:block}
